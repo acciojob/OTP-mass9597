@@ -8,7 +8,7 @@ inputs.forEach((input,index) =>{
 			if(input.value !=="" && index < inputs.length-1){
 			   inputs[index+1].focus();
 		    }
-		},1);
+		},0);
 		
 	});
 
@@ -16,6 +16,7 @@ inputs.forEach((input,index) =>{
 		if(e.key === "Backspace"){
 			if(input.value ==="" && index >0){
 				inputs[index-1].focus();
+				inputs[index-1].value="";
 			}
 		}
 	});
