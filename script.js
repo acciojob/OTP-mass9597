@@ -4,11 +4,16 @@ const inputs = document.querySelectorAll(".code");
 
 inputs.forEach((input,index) =>{
 	input.addEventListener("input",() =>{
-		setTimeout(() =>{
-			if(input.value !=="" && index < inputs.length-1){
-			   inputs[index+1].focus();
-		    }
-		},0);
+		
+			if(input.value){
+
+				if(index < inputs.length -1){
+					inputs[index+1].focus();
+				}
+				
+			}
+				
+				
 		
 	});
 
