@@ -5,14 +5,14 @@ const inputs = document.querySelectorAll(".code");
 inputs.forEach((input,index) =>{
 	input.addEventListener("input",() =>{
 		
-			if(input.value){
-
+			if(input.value && !isNaN(input.value)){
 				if(index < inputs.length -1){
 					inputs[index+1].focus();
 				}
 				
-			}
-				
+			}else{
+				input.value="";
+			}			
 				
 		
 	});
@@ -24,6 +24,10 @@ inputs.forEach((input,index) =>{
 					inputs[index-1].focus();
 				}
 				
+			}
+		}else{
+			if(input.value.length >=1){
+				e.preventDefault();
 			}
 		}
 	});
